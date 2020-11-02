@@ -1,0 +1,1 @@
+﻿SELECT c.*, a.*, c.ID AS 'IDCUSTOMERS', a.ID AS 'IDADDRESSES' FROM Customers c INNER JOIN Addresses a ON c.ENDERECOID = a.ID
