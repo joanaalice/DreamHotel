@@ -68,10 +68,9 @@ namespace BusinessLogicalLayer
             return responseCustomer;
         }
 
-        public QueryResponse<Customer> GetByCPF(string cpf)
+        public SingleResponse<Customer> GetCustomerByCPF(string cpf)
         {
-            QueryResponse<Customer> responseCustomer = customerDAO.GetByCPF(cpf);
-            return responseCustomer;
+            return customerDAO.GetCustomerByCPF(cpf);
         }
     }
 }

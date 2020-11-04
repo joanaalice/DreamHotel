@@ -2,12 +2,6 @@
 using Common;
 using DataAccessLayer;
 using Entities;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Transactions;
 
 namespace BusinessLogicalLayer
@@ -20,9 +14,18 @@ namespace BusinessLogicalLayer
             Response response = Validate(item);
             if (response.Success)
             {
-                return userDAO.Insert(item);
+                response = userDAO.IsCpfUnique(item.Cpf);
+                if (response.Success)
+                {
+                    return userDAO.Insert(item);
+                }
             }
             return response;
+        }
+
+        public SingleResponse<User> GetUserByCPF(string cpf)
+        {
+            return userDAO.GetUserByCPF(cpf);
         }
 
         public Response InsertAddressUserTransaction(User usuario)
@@ -51,7 +54,7 @@ namespace BusinessLogicalLayer
         {
             if (CheckAnyProperty.IsAnyNullOrEmpty(item))
             {
-                AddError("Todos os campos do endereco devem ser informados");
+                AddError("Todos os campos devem ser informados");
                 return base.Validate(item);
             }
             foreach (string err in CheckAttributeLength.AttributeLength<User>(item))
@@ -67,3 +70,4 @@ namespace BusinessLogicalLayer
         }
     }
 }
+

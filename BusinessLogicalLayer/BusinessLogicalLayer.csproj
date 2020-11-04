@@ -54,6 +54,7 @@
     <Compile Include="CustomerBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderBLL.cs" />
+    <Compile Include="ReservationBLL.cs" />
     <Compile Include="RoomBLL.cs" />
     <Compile Include="UserBLL.cs" />
   </ItemGroup>

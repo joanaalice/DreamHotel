@@ -146,62 +146,62 @@ namespace DataAccessLayer
             }
 
         }
-        public SingleResponse<Room> GetRoomByID(int id)
-        {
-            SingleResponse<Room> response = new SingleResponse<Room>();
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = ConnectionHelper.GetConnectionString();
-            SqlCommand command = new SqlCommand();
+        // public SingleResponse<Room> GetRoomByID(int id)
+        //{
+        //    SingleResponse<Room> response = new SingleResponse<Room>();
+        //    SqlConnection connection = new SqlConnection();
+        //    connection.ConnectionString = ConnectionHelper.GetConnectionString();
+        //    SqlCommand command = new SqlCommand();
 
-            command.Parameters.AddWithValue("@ID", id);
-            command.Connection = connection;
-            command.CommandText = "SELECT * FROM Rooms WHERE ID = @ID";
-            try
-            {
-                connection.Open();
+        //    command.Parameters.AddWithValue("@ID", id);
+        //    command.Connection = connection;
+        //    command.CommandText = "SELECT * FROM Rooms WHERE ID = @ID";
+        //    try
+        //    {
+        //        connection.Open();
 
-                SqlDataReader reader = command.ExecuteReader();
+        //        SqlDataReader reader = command.ExecuteReader();
 
-                if (reader.Read())
-                {
-                    response.Data = new User();
-                    response.Data.Id = (int)reader["IDUSER"];
-                    response.Data.Nome = (string)reader["NOME"];
-                    response.Data.Cpf = (string)reader["CPF"];
-                    response.Data.Rg = (string)reader["RG"];
-                    response.Data.Email = (string)reader["EMAIL"];
-                    response.Data.Telefone = (string)reader["TELEFONE1"];
-                    response.Data.Telefone_Aux = (string)reader["TELEFONE2"];
-                    response.Data.EnderecoId = (int)reader["ENDERECOID"];
-                    response.Data.IsAdmin = (bool)reader["ISADMIN"];
-                    response.Data.Senha = (string)reader["SENHA"];
-                    response.Data.Ativo = (bool)reader["ATIVO"];
-                    response.Data.Endereco.ID = (int)reader["IDADDRESS"];
-                    response.Data.Endereco.Rua = (string)reader["RUA"];
-                    response.Data.Endereco.Bairro = (string)reader["BAIRRO"];
-                    response.Data.Endereco.Cidade = (string)reader["CIDADE"];
-                    response.Data.Endereco.UF = (string)reader["UF"];
-                    response.Data.Endereco.CEP = (string)reader["CEP"];
-                    response.Data.Endereco.Pais = (string)reader["PAIS"];
-                    response.Data.Endereco.Numero = (string)reader["NUMERO"];
-                }
+        //        if (reader.Read())
+        //        {
+        //            response.Data = new User();
+        //            response.Data.Id = (int)reader["IDUSER"];
+        //            response.Data.Nome = (string)reader["NOME"];
+        //            response.Data.Cpf = (string)reader["CPF"];
+        //            response.Data.Rg = (string)reader["RG"];
+        //            response.Data.Email = (string)reader["EMAIL"];
+        //            response.Data.Telefone = (string)reader["TELEFONE1"];
+        //            response.Data.Telefone_Aux = (string)reader["TELEFONE2"];
+        //            response.Data.EnderecoId = (int)reader["ENDERECOID"];
+        //            response.Data.IsAdmin = (bool)reader["ISADMIN"];
+        //            response.Data.Senha = (string)reader["SENHA"];
+        //            response.Data.Ativo = (bool)reader["ATIVO"];
+        //            response.Data.Endereco.ID = (int)reader["IDADDRESS"];
+        //            response.Data.Endereco.Rua = (string)reader["RUA"];
+        //            response.Data.Endereco.Bairro = (string)reader["BAIRRO"];
+        //            response.Data.Endereco.Cidade = (string)reader["CIDADE"];
+        //            response.Data.Endereco.UF = (string)reader["UF"];
+        //            response.Data.Endereco.CEP = (string)reader["CEP"];
+        //            response.Data.Endereco.Pais = (string)reader["PAIS"];
+        //            response.Data.Endereco.Numero = (string)reader["NUMERO"];
+        //        }
 
-                response.Success = true;
-                response.Message = "Dado retornado com sucesso.";
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.Success = false;
-                response.Message = "Erro no banco de dados, contate o administrador.";
-                response.ExceptionError = ex.Message;
-                response.StackTrace = ex.StackTrace;
-                return response;
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
+        //        response.Success = true;
+        //        response.Message = "Dado retornado com sucesso.";
+        //        return response;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        response.Success = false;
+        //        response.Message = "Erro no banco de dados, contate o administrador.";
+        //        response.ExceptionError = ex.Message;
+        //        response.StackTrace = ex.StackTrace;
+        //        return response;
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
+        //}
     }
 }

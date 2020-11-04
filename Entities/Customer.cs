@@ -9,6 +9,10 @@ namespace Entities
 {
     public class Customer
     {
+        public Customer()
+        {
+            this.Endereco = new Address();
+        }
         public int ID { get; set; }
         [Length(70)]
         [@MinLength(3)]

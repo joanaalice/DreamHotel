@@ -43,7 +43,7 @@ namespace PresentationLayer
             }
             else
             {
-                QueryResponse<Customer> response = customerBLL.GetByCPF(txtCpf.Text);
+                SingleResponse<Customer> response = customerBLL.GetCustomerByCPF(txtCpf.Text);
                 if (response.Success)
                 {
                     dgvClientes.DataSource = response.Data;

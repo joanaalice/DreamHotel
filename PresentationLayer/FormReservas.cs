@@ -27,7 +27,6 @@ namespace PresentationLayer
 
         private void FormReservas_Load(object sender, EventArgs e)
         {
-            monthCalendar.BackColor = Color.Black;
 
         }
 
