@@ -12,7 +12,7 @@ namespace Entities
     {
         public int ID { get; set; }
         [Length(70)]
-        [@MinLength(3)]
+        [@MinLength(1)]
         public string Nome { get; set; }
         [Length(70)]
         [@MinLength(3)]
@@ -20,10 +20,12 @@ namespace Entities
         [Length(6)]
         [@MinLength(1)]
         public string Numero { get; set; }
-        public TipoEnum Tipo { get; set; }
-        public double Valor_Diaria { get; set; }
+        public TipoEnum Tipo_Quarto { get; set; }
+        [Length(10)]
+        [@MinLength(3)]
+        public decimal Valor_Diaria { get; set; }
         public DateTime Data_Cadastro { get; set; }
-        public bool Reservado { get; set; }
+        public bool Reservado { get; set; } = false;
         public bool Ativo { get; set; }
     }
 }

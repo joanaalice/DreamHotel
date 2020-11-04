@@ -47,11 +47,14 @@
     <Compile Include="BaseValidator.cs" />
     <Compile Include="Checkers\CheckAnyProperty.cs" />
     <Compile Include="Checkers\CheckAttributeLength.cs" />
+    <Compile Include="Checkers\CheckCnpjRule.cs" />
     <Compile Include="Checkers\CheckCpfRule.cs" />
     <Compile Include="Checkers\CheckEmailRule.cs" />
     <Compile Include="AdressBLL.cs" />
     <Compile Include="CustomerBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderBLL.cs" />
+    <Compile Include="RoomBLL.cs" />
     <Compile Include="UserBLL.cs" />
   </ItemGroup>
   <ItemGroup>

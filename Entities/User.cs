@@ -9,6 +9,10 @@ namespace Entities
 {
     public class User
     {
+        public User()
+        {
+            this.Endereco = new Address();
+        }
         public int Id { get; set; }
         [Length(70)]
         [@MinLength(3)]
@@ -27,7 +31,7 @@ namespace Entities
         public string Telefone { get; set; }
         [Length(15)]
         [@MinLength(8)]
-        public string Telefone_Aux { get; set; } = "Não informadoi";
+        public string Telefone_Aux { get; set; } = "Não informado";
         public int EnderecoId { get; set; }
         public Address Endereco { get; set; }
         public DateTime Data_Cadastro { get; set; }
@@ -35,6 +39,6 @@ namespace Entities
         [Length(50)]
         [@MinLength(6)]
         public string Senha { get; set; }
-        public bool Ativo{ get; set; }
+        public bool Ativo { get; set; }
     }
 }
