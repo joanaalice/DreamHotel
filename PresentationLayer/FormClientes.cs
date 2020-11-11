@@ -27,7 +27,6 @@ namespace PresentationLayer
             if (response.Success)
             {
                 dgvClientes.DataSource = response.Data;
-                
             }
             else
             {
@@ -140,7 +139,6 @@ namespace PresentationLayer
                         if (dgvcolumn.Name == nomeColuna)
                         {
                             dgvcolumn.Visible = false;
-
                         }
                     }
                 }
@@ -157,7 +155,6 @@ namespace PresentationLayer
                         if (dgvcolumn.Name == nomeColuna)
                         {
                             dgvcolumn.Visible = true;
-
                         }
                     }
                 }

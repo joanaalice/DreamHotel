@@ -21,7 +21,7 @@ namespace DataAccessLayer
             command.CommandText = "INSERT INTO Reservations (QUARTOID, CLIENTEID, FUNCIONARIOID, DATA_RESERVA) VALUES (@QUARTOID, @CUSTOMERID, @USERID, @DATA_RESERVA)";
             command.Parameters.AddWithValue("@QUARTOID", reserva.Quarto.ID);
             command.Parameters.AddWithValue("@CUSTOMERID", reserva.Customer.ID);
-            command.Parameters.AddWithValue("@USERID", reserva.Funcionario.Id);
+            command.Parameters.AddWithValue("@USERID", reserva.Funcionario.ID);
             command.Parameters.AddWithValue("@DATA_RESERVA", reserva.Data_Reserva);
             command.Connection = connection;
 

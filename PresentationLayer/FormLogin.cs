@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLogicalLayer;
+using Common;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -112,9 +115,17 @@ namespace PresentationLayer
         private FormIndex formIndex = new FormIndex();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            formIndex.Show();
-            this.Hide();
+            UserBLL userBLL = new UserBLL();
+            userBLL.GetUserLogin(txtUsuario.Text, txtSenha.Text);
+            if (WhoIsUserLog.IsUserLoged())
+            {
+                formIndex.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("NEGATIVO");
+            }
         }
 
         private void linkCadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

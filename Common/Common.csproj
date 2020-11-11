@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auxiliar\CPFMask.cs" />
     <Compile Include="Auxiliar\LengthAttribute.cs" />
     <Compile Include="Enums\Tipo.cs" />
+    <Compile Include="IsUserLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryResponse.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="SingleResponse.cs" />
+    <Compile Include="UserLoged.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LibsAux\Correios.CEP.dll" />
