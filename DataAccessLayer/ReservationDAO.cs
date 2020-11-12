@@ -22,8 +22,12 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@QUARTOID", reserva.Quarto.ID);
             command.Parameters.AddWithValue("@CUSTOMERID", reserva.Customer.ID);
             command.Parameters.AddWithValue("@USERID", reserva.Funcionario.ID);
+<<<<<<< HEAD
             command.Parameters.AddWithValue("@DATA_ENTRADA", reserva.Data_Entrada);
             command.Parameters.AddWithValue("@DATA_SAIDA", reserva.Data_Saida);
+=======
+            command.Parameters.AddWithValue("@DATA_RESERVA", reserva.Data_Reserva);
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             command.Connection = connection;
 
             try

@@ -150,7 +150,58 @@ namespace DataAccessLayer
                 connection.Close();
             }
         }
+        public SingleResponse<User> GetUserLoginCredencials(string email, string senha)
+        {
+            SingleResponse<User> response = new SingleResponse<User>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionHelper.GetConnectionString();
+            SqlCommand command = new SqlCommand();
 
+            command.Parameters.AddWithValue("@EMAIL", email);
+            command.Parameters.AddWithValue("@SENHA", senha);
+            command.Connection = connection;
+            command.CommandText = "SELECT ID, NOME, EMAIL FROM Users WHERE EMAIL = @EMAIL AND SENHA = @SENHA AND ATIVO = 1";
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    response.Data = new User();
+                    response.Data.ID = (int)reader["ID"];
+                    response.Data.Nome = (string)reader["NOME"];
+                    response.Data.Email = (string)reader["EMAIL"];
+                    response.Success = true;
+                    response.Message = "Usuario Encontrado";
+                    return response;
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "Usuario não encontrado.";
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Erro no banco de dados, contate o administrador.";
+                response.ExceptionError = ex.Message;
+                response.StackTrace = ex.StackTrace;
+                return response;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public QueryResponse<User> GetAll()
+        {
+            QueryResponse<User> response = new QueryResponse<User>();
+
+<<<<<<< HEAD
         public SingleResponse<User> GetUserById(int id)
         {
             SingleResponse<User> response = new SingleResponse<User>();
@@ -307,6 +358,8 @@ namespace DataAccessLayer
         {
             QueryResponse<User> response = new QueryResponse<User>();
 
+=======
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
@@ -420,7 +473,11 @@ namespace DataAccessLayer
             }
             return dbResponse;
         }
+<<<<<<< HEAD
         public Response Delete(int id)
+=======
+        public Response Delete (int id)
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         {
             Response dbResponse = new Response();
 
@@ -474,7 +531,7 @@ namespace DataAccessLayer
 
         //    command.CommandText =
         //        "DELETE FROM User WHERE ID = @ID";
-        //    command.Parameters.AddWithValue("@ID", user.Id);
+        //    command.Parameters.AddWithValue("@ID", user.ID);
 
         //    command.Connection = connection;
 
@@ -531,7 +588,7 @@ namespace DataAccessLayer
         //            while (reader.Read())
         //            {
         //                User user = new User();
-        //                user.Id = (int)reader["ID"];
+        //                user.ID = (int)reader["ID"];
         //                user.Nome = (string)reader["NOME"];
         //                user.Cpf= (string)reader["CPF"];
         //                user.Rg = (string)reader["RG"];
@@ -583,7 +640,7 @@ namespace DataAccessLayer
 
         //            if (reader.Read())
         //            {
-        //                user.Id = (int)reader["ID"];
+        //                user.ID = (int)reader["ID"];
         //            }
         //            response.Success = true;
         //            response.Message = "Dados selecionados com sucesso.";

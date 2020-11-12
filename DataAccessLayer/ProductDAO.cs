@@ -5,9 +5,12 @@ using Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+<<<<<<< HEAD
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+=======
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
 
 namespace DataAccessLayer
 {
@@ -198,7 +201,11 @@ namespace DataAccessLayer
             }
             return dbResponse;
         }
+<<<<<<< HEAD
         public Response Delete(int id)
+=======
+        public Response Delete (int id)
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         {
             Response dbResponse = new Response();
 
@@ -243,3 +250,7 @@ namespace DataAccessLayer
 
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96

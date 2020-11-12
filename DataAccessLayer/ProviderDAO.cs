@@ -158,7 +158,7 @@ namespace DataAccessLayer
 
         //    command.CommandText =
         //        "UPDATE Users SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE1 = @TELEFONE1, TELEFONE2 = @TELEFONE2, ISADMIN = @ISADMIN, SENHA = @SENHA WHERE ID = @ID";
-        //    command.Parameters.AddWithValue("@ID", user.Id);
+        //    command.Parameters.AddWithValue("@ID", user.ID);
         //    command.Parameters.AddWithValue("@NOME", user.Nome);
         //    command.Parameters.AddWithValue("@CPF", user.Nome);
         //    command.Parameters.AddWithValue("@RG", user.Nome);

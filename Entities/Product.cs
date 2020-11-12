@@ -17,9 +17,15 @@ namespace Entities
         [Length(150)]
         [@MinLength(0)]
         public string Descricao { get; set; }
+<<<<<<< HEAD
         public decimal Preco { get; set; }
         public int QtdEstoque { get; set; }
         public UnidadeMedida UnidadeMedida { get; set; }
+=======
+        public decimal Preco{ get; set; }
+        public int QtdEstoque { get; set; }
+        public UnidadeMedida UnidadeMedida{ get; set; }
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         public int Data_Cadastro { get; set; }
         public int CategoriaID { get; set; }
         public bool Ativo { get; set; }

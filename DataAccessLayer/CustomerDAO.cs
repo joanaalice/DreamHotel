@@ -50,7 +50,6 @@ namespace DataAccessLayer
             }
             return dbResponse;
         }
-
         public SingleResponse<Customer> GetCustomerByCPF(string cpf)
         {
 
@@ -115,7 +114,6 @@ namespace DataAccessLayer
             }
 
         }
-
         public QueryResponse<Customer> GetAll()
         {
             QueryResponse<Customer> response = new QueryResponse<Customer>();
@@ -180,6 +178,96 @@ namespace DataAccessLayer
                 connection.Close();
             }
 
+        }
+        public Response Update(Customer customer)
+        {
+            Response dbResponse = new Response();
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionHelper.GetConnectionString();
+
+            SqlCommand command = new SqlCommand();
+
+            command.CommandText = "UPDATE Users SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE1 = @TELEFONE1, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
+            command.Parameters.AddWithValue("@ID", customer.ID);
+            command.Parameters.AddWithValue("@NOME", customer.Nome);
+            command.Parameters.AddWithValue("@CPF", customer.CPF);
+            command.Parameters.AddWithValue("@RG", customer.RG);
+            command.Parameters.AddWithValue("@EMAIL", customer.Email);
+            command.Parameters.AddWithValue("@TELEFONE1", customer.Telefone);
+            command.Parameters.AddWithValue("@TELEFONE2", customer.Telefone_Aux);
+
+            command.Connection = connection;
+
+            try
+            {
+                connection.Open();
+                //int nLinhasAfetadas = command.ExecuteNonQuery();
+                if (command.ExecuteNonQuery() == 0)
+                {
+                    dbResponse.Success = false;
+                    dbResponse.Message = "Registro não encontrado!";
+                    return dbResponse;
+                }
+
+                dbResponse.Success = true;
+                dbResponse.Message = "Customer atualizado com sucesso!";
+            }
+            catch (Exception ex)
+            {
+                dbResponse.Success = false;
+                dbResponse.Message = "Erro no banco de dados, contate o administrador.";
+
+                dbResponse.StackTrace = ex.StackTrace;
+                dbResponse.ExceptionError = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dbResponse;
+        }
+        public Response Delete(int id)
+        {
+            Response dbResponse = new Response();
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionHelper.GetConnectionString();
+
+            SqlCommand command = new SqlCommand();
+
+            command.CommandText = "UPDATE Customers SET ATIVO = 0 WHERE ID = @ID";
+            command.Parameters.AddWithValue("@ID", id);
+
+            command.Connection = connection;
+
+            try
+            {
+                connection.Open();
+                //int nLinhasAfetadas = command.ExecuteNonQuery();
+                if (command.ExecuteNonQuery() == 0)
+                {
+                    dbResponse.Success = false;
+                    dbResponse.Message = "Registro não encontrado!";
+                    return dbResponse;
+                }
+
+                dbResponse.Success = true;
+                dbResponse.Message = "Customer apagado com sucesso!";
+            }
+            catch (Exception ex)
+            {
+                dbResponse.Success = false;
+                dbResponse.Message = "Erro no banco de dados, contate o administrador.";
+
+                dbResponse.StackTrace = ex.StackTrace;
+                dbResponse.ExceptionError = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dbResponse;
         }
     }
 }

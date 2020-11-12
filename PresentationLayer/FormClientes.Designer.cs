@@ -61,6 +61,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
+<<<<<<< HEAD
+=======
+            // CadastroDeCliente
+            // 
+            this.CadastroDeCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CadastroDeCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CadastroDeCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CadastroDeCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CadastroDeCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CadastroDeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CadastroDeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CadastroDeCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.CadastroDeCliente.Location = new System.Drawing.Point(-18, -1);
+            this.CadastroDeCliente.Name = "CadastroDeCliente";
+            this.CadastroDeCliente.Size = new System.Drawing.Size(377, 51);
+            this.CadastroDeCliente.TabIndex = 23;
+            this.CadastroDeCliente.Text = "BUSCAR CLIENTES";
+            this.CadastroDeCliente.UseVisualStyleBackColor = false;
+            // 
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             // panelCpf
             // 
             this.panelCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -86,11 +108,19 @@
             this.txtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpf.Dock = System.Windows.Forms.DockStyle.Top;
+<<<<<<< HEAD
             this.txtCpf.Font = new System.Drawing.Font("GatsbyFLF", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.ForeColor = System.Drawing.Color.Silver;
             this.txtCpf.Location = new System.Drawing.Point(0, 0);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(284, 35);
+=======
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.ForeColor = System.Drawing.Color.Silver;
+            this.txtCpf.Location = new System.Drawing.Point(0, 0);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(284, 30);
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.txtCpf.TabIndex = 23;
             this.txtCpf.Text = "Por CPF...";
             this.txtCpf.Enter += new System.EventHandler(this.txtCpf_Enter);
@@ -105,7 +135,11 @@
             this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnBuscar.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnBuscar.Location = new System.Drawing.Point(513, 102);
             this.btnBuscar.Name = "btnBuscar";
@@ -124,7 +158,11 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnEditar.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnEditar.Location = new System.Drawing.Point(260, 9);
             this.btnEditar.Name = "btnEditar";
@@ -143,7 +181,11 @@
             this.btnDeletar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnDeletar.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.btnDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnDeletar.Location = new System.Drawing.Point(454, 9);
             this.btnDeletar.Name = "btnDeletar";
@@ -162,7 +204,11 @@
             this.btnFiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnFiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnFiltrar.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnFiltrar.Location = new System.Drawing.Point(357, 9);
             this.btnFiltrar.Name = "btnFiltrar";
@@ -227,6 +273,7 @@
             this.panelFiltro.TabIndex = 74;
             this.panelFiltro.Visible = false;
             // 
+<<<<<<< HEAD
             // panelDireita
             // 
             this.panelDireita.BackColor = System.Drawing.Color.Black;
@@ -258,6 +305,45 @@
             this.btnEmail.Text = "EMAIL";
             this.btnEmail.UseVisualStyleBackColor = false;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+=======
+            // btnAtivo
+            // 
+            this.btnAtivo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAtivo.BackColor = System.Drawing.Color.Black;
+            this.btnAtivo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAtivo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnAtivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnAtivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnAtivo.Location = new System.Drawing.Point(127, 121);
+            this.btnAtivo.Name = "btnAtivo";
+            this.btnAtivo.Size = new System.Drawing.Size(127, 32);
+            this.btnAtivo.TabIndex = 80;
+            this.btnAtivo.Text = "ATIVO";
+            this.btnAtivo.UseVisualStyleBackColor = false;
+            this.btnAtivo.Click += new System.EventHandler(this.btnAtivo_Click);
+            // 
+            // btnEnderecoID
+            // 
+            this.btnEnderecoID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEnderecoID.BackColor = System.Drawing.Color.Black;
+            this.btnEnderecoID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnEnderecoID.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnEnderecoID.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnEnderecoID.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEnderecoID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnderecoID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnderecoID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnEnderecoID.Location = new System.Drawing.Point(127, 90);
+            this.btnEnderecoID.Name = "btnEnderecoID";
+            this.btnEnderecoID.Size = new System.Drawing.Size(127, 32);
+            this.btnEnderecoID.TabIndex = 79;
+            this.btnEnderecoID.Text = "ENDEREÇO";
+            this.btnEnderecoID.UseVisualStyleBackColor = false;
+            this.btnEnderecoID.Click += new System.EventHandler(this.btnEnderecoID_Click);
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             // 
             // btnTelefone2
             // 
@@ -268,7 +354,11 @@
             this.btnTelefone2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnTelefone2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnTelefone2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnTelefone2.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.btnTelefone2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnTelefone2.Location = new System.Drawing.Point(0, 62);
             this.btnTelefone2.Name = "btnTelefone2";
@@ -338,7 +428,11 @@
             this.btnRG.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnRG.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnRG.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.btnRG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnRG.Location = new System.Drawing.Point(0, 32);
             this.btnRG.Name = "btnRG";
@@ -357,7 +451,11 @@
             this.btnNome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnNome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnNome.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             this.btnNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnNome.Location = new System.Drawing.Point(0, 0);
             this.btnNome.Name = "btnNome";
@@ -367,8 +465,108 @@
             this.btnNome.UseVisualStyleBackColor = false;
             this.btnNome.Click += new System.EventHandler(this.btnNome_Click);
             // 
+<<<<<<< HEAD
+=======
+            // btnData
+            // 
+            this.btnData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnData.BackColor = System.Drawing.Color.Black;
+            this.btnData.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnData.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnData.Location = new System.Drawing.Point(1, 121);
+            this.btnData.Name = "btnData";
+            this.btnData.Size = new System.Drawing.Size(127, 32);
+            this.btnData.TabIndex = 75;
+            this.btnData.Text = "DATA";
+            this.btnData.UseVisualStyleBackColor = false;
+            this.btnData.Click += new System.EventHandler(this.btnData_Click);
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEmail.BackColor = System.Drawing.Color.Black;
+            this.btnEmail.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnEmail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnEmail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnEmail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnEmail.Location = new System.Drawing.Point(1, 90);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(127, 32);
+            this.btnEmail.TabIndex = 74;
+            this.btnEmail.Text = "EMAIL";
+            this.btnEmail.UseVisualStyleBackColor = false;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+            // 
+            // btnTelefone
+            // 
+            this.btnTelefone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTelefone.BackColor = System.Drawing.Color.Black;
+            this.btnTelefone.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnTelefone.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnTelefone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnTelefone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnTelefone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnTelefone.Location = new System.Drawing.Point(1, 61);
+            this.btnTelefone.Name = "btnTelefone";
+            this.btnTelefone.Size = new System.Drawing.Size(127, 32);
+            this.btnTelefone.TabIndex = 73;
+            this.btnTelefone.Text = "TELEFONE";
+            this.btnTelefone.UseVisualStyleBackColor = false;
+            this.btnTelefone.Click += new System.EventHandler(this.btnTelefone_Click);
+            // 
+            // btnCPF
+            // 
+            this.btnCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCPF.BackColor = System.Drawing.Color.Black;
+            this.btnCPF.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCPF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnCPF.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnCPF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCPF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnCPF.Location = new System.Drawing.Point(1, 32);
+            this.btnCPF.Name = "btnCPF";
+            this.btnCPF.Size = new System.Drawing.Size(127, 32);
+            this.btnCPF.TabIndex = 72;
+            this.btnCPF.Text = "CPF";
+            this.btnCPF.UseVisualStyleBackColor = false;
+            this.btnCPF.Click += new System.EventHandler(this.btnCPF_Click);
+            // 
+            // btnID
+            // 
+            this.btnID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnID.BackColor = System.Drawing.Color.Black;
+            this.btnID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnID.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnID.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnID.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.btnID.Location = new System.Drawing.Point(1, 1);
+            this.btnID.Name = "btnID";
+            this.btnID.Size = new System.Drawing.Size(127, 32);
+            this.btnID.TabIndex = 70;
+            this.btnID.Text = "ID";
+            this.btnID.UseVisualStyleBackColor = false;
+            this.btnID.Click += new System.EventHandler(this.btnID_Click);
+            // 
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -393,6 +591,7 @@
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.dgvClientes.Location = new System.Drawing.Point(0, 154);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;

@@ -19,7 +19,11 @@ namespace DataAccessLayer.Infraestructure
 
         public static string GetConnectionString()
         {
+<<<<<<< HEAD
             return JoanaDBPROWAY;
+=======
+            return JhonDBcasa;
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         }
     }
 }

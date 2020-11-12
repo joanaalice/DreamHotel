@@ -332,7 +332,7 @@ namespace DataAccessLayer
         //        if (reader.Read())
         //        {
         //            response.Data = new User();
-        //            response.Data.Id = (int)reader["IDUSER"];
+        //            response.Data.ID = (int)reader["IDUSER"];
         //            response.Data.Nome = (string)reader["NOME"];
         //            response.Data.Cpf = (string)reader["CPF"];
         //            response.Data.Rg = (string)reader["RG"];

@@ -1,6 +1,10 @@
 ﻿using BusinessLogicalLayer;
 using Common;
+<<<<<<< HEAD
 using PresentationLayer.Messages;
+=======
+using Entities;
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,18 +120,28 @@ namespace PresentationLayer
         {
             UserBLL userBLL = new UserBLL();
             userBLL.GetUserLogin(txtUsuario.Text, txtSenha.Text);
+<<<<<<< HEAD
             if (IsUserLog.IsUserLoged())
             {
                 FormIndex formIndex = new FormIndex();
+=======
+            if (WhoIsUserLog.IsUserLoged())
+            {
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
                 formIndex.Show();
                 this.Hide();
             }
             else
             {
+<<<<<<< HEAD
                 Form form = new FormNaoCadastrado("Usuário não encontrado.");
                 form.Show();
             }
            
+=======
+                MessageBox.Show("NEGATIVO");
+            }
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         }
 
         private void linkCadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

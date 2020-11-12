@@ -28,6 +28,7 @@ namespace BusinessLogicalLayer
         public Response Update(User user)
         {
             return userDAO.Update(user);
+<<<<<<< HEAD
         }
         public Response Delete(User user)
         {
@@ -52,6 +53,32 @@ namespace BusinessLogicalLayer
         //    }
         //    return usuarioResponse;
         //}
+=======
+        }
+        public Response Delete(User user)
+        {
+            return userDAO.Delete(user.ID);
+        }
+        public QueryResponse<User> GetAll()
+        {
+            QueryResponse<User> responseUser = userDAO.GetAll();
+            List<User> temp = responseUser.Data;
+            foreach (User item in temp)
+            {
+                item.CPF = CPFMask.CPFMasked(item.CPF);
+            }
+            return responseUser;
+        }
+        public Response GetUserLogin(string email, string senha)
+        {
+            SingleResponse<User> usuarioResponse = userDAO.GetUserLoginCredencials(email, senha);
+            if (usuarioResponse.Success)
+            {
+                WhoIsUserLog.CurrentUser = new UserLoged() { ID = usuarioResponse.Data.ID, Email = usuarioResponse.Data.Email, Nome = usuarioResponse.Data.Nome };
+            }
+            return usuarioResponse;
+        }
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         public Response InsertAddressUserTransaction(User usuario)
         {
             Response responseUser = null;
@@ -73,6 +100,7 @@ namespace BusinessLogicalLayer
             }
             return responseUser;
         }
+<<<<<<< HEAD
 
         public Response GetUserLogin(string email, string senha)
         {
@@ -83,15 +111,20 @@ namespace BusinessLogicalLayer
             }
             return usuarioResponse;
         }
+=======
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         public SingleResponse<User> GetUserByCPF(string cpf)
         {
             return userDAO.GetUserByCPF(cpf);
         }
+<<<<<<< HEAD
 
         public SingleResponse<User> GetUserById(int id)
         {
             return userDAO.GetUserById(id);
         }
+=======
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
         public override Response Validate(User item)
         {
             if (CheckAnyProperty.IsAnyNullOrEmpty(item))
@@ -111,6 +144,7 @@ namespace BusinessLogicalLayer
             }
             return base.Validate(item);
         }
+
     }
 }
 

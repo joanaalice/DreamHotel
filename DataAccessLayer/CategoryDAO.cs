@@ -1,4 +1,8 @@
 ﻿using Common;
+<<<<<<< HEAD
+=======
+using Common.Enums;
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
 using DataAccessLayer.Infraestructure;
 using Entities;
 using System;
@@ -136,4 +140,8 @@ namespace DataAccessLayer
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96

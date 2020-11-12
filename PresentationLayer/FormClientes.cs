@@ -133,6 +133,50 @@ namespace PresentationLayer
                 }
             }
         }
+<<<<<<< HEAD
+=======
+        private void FiltrarEndereco()
+        {
+            if (btnEnderecoID.BackColor == Color.Black)
+            {
+                btnEnderecoID.BackColor = Color.Gray;
+                btnEnderecoID.ForeColor = Color.Black;
+
+                foreach (DataGridViewColumn dgvcolumn in dgvClientes.Columns)
+                {
+                    foreach (string nomeColuna in enderecoNomesColunas)
+                    {
+                        if (dgvcolumn.Name == nomeColuna)
+                        {
+                            dgvcolumn.Visible = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                btnEnderecoID.BackColor = Color.Black;
+                btnEnderecoID.ForeColor = Color.FromArgb(230, 180, 83);
+
+                foreach (DataGridViewColumn dgvcolumn in dgvClientes.Columns)
+                {
+                    foreach (string nomeColuna in enderecoNomesColunas)
+                    {
+                        if (dgvcolumn.Name == nomeColuna)
+                        {
+                            dgvcolumn.Visible = true;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void btnID_Click(object sender, EventArgs e)
+        {
+            Filtrar("ID", btnID);
+        }
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
 
         private void btnNome_Click(object sender, EventArgs e)
         {

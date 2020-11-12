@@ -15,7 +15,11 @@ namespace Common.Auxiliar
         }
         public static string CPFUnmasked(string cpf)
         {
+<<<<<<< HEAD
             cpf = cpf.Replace(".", "").Replace("-", "");
+=======
+            cpf = cpf.Replace(".","").Replace("-", "");
+>>>>>>> d90d52c7659cca1ff2401e78ab6d7ed1c6565a96
             return cpf;
         }
     }
