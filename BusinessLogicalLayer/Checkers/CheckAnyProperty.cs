@@ -17,7 +17,11 @@ namespace BusinessLogicalLayer.Checkers
                 {
                     continue;
                 }
-                if (p.PropertyType == typeof(string))
+                else if (p.Name.Equals("Telefone_Aux"))
+                {
+                    continue;
+                }
+                else if (p.PropertyType == typeof(string))
                 {
                     string value = (string)p.GetValue(myObj);
                     if (string.IsNullOrEmpty(value))

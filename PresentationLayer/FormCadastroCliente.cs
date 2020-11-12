@@ -14,6 +14,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Collections.ObjectModel;
 using Common;
+using PresentationLayer.Messages;
 
 namespace PresentationLayer
 {
@@ -22,47 +23,7 @@ namespace PresentationLayer
         public FormCadastroCliente()
         {
             InitializeComponent();
-
         }
-        List<Control> controles = new List<Control>();
-
-        private void FormCadastroCliente_MouseEnter(object sender, EventArgs e)
-        {
-            foreach (Panel panel in this.Controls.OfType<Panel>())
-            {
-                foreach (TextBox tb in panel.Controls.OfType<TextBox>())
-                {
-                    controles.Add(tb);
-                }
-            }
-
-            int i = 0;
-
-            foreach (var tb in controles)
-            {
-                if (tb.Text != "" && tb.Text != "Nome" && tb.Text != "CPF" && tb.Text != "RG" && tb.Text != "Email" && tb.Text != "Telefone" && tb.Text != "CEP" && tb.Text != "País" && tb.Text != "Rua" && tb.Text != "Bairro" && tb.Text != "Cidade" && tb.Text != "UF")
-                {
-                    i += 1;
-                }
-            }
-            if (i == 11)
-            {
-                btnCadastrar.BackColor = Color.Black;
-                btnCadastrar.ForeColor = Color.FromArgb(230, 180, 83);
-                btnCadastrar.Enabled = true;
-                btnCadastrar.Cursor = Cursors.Hand;
-            }
-            else
-            {
-                btnCadastrar.BackColor = Color.FromArgb(20, 20, 20);
-                btnCadastrar.ForeColor = Color.Silver;
-                btnCadastrar.Enabled = true;
-                btnCadastrar.Cursor = Cursors.Default;
-            }
-            controles.Clear();
-
-        }
-
 
         private void txtNome_Enter(object sender, EventArgs e)
         {
@@ -284,46 +245,130 @@ namespace PresentationLayer
             }
         }
 
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+
+            if (txtEmail.Text == "Email")
+            {
+                txtEmail.Text = "";
+                txtEmail.ForeColor = Color.FromArgb(230, 180, 83);
+                linhaEmail.BackColor = Color.Silver;
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "")
+            {
+                txtEmail.Text = "Email";
+                txtEmail.ForeColor = Color.Silver;
+                linhaEmail.BackColor = Color.FromArgb(230, 180, 83);
+            }
+
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            //AddressBLL addressBLL = new AddressBLL();
-            CustomerBLL customerBLL = new CustomerBLL();
             Customer customer = new Customer();
-            //cepConsulta cepAddress = correiosCEP.GetAddress("88345677");
+            CustomerBLL customerBLL = new CustomerBLL();
+            Response response = new Response();
+            customer.Nome = txtNome.Text;
+            customer.CPF = txtCpf.Text;
+            customer.RG = txtRg.Text;
+            customer.Email = txtEmail.Text;
+            customer.Telefone = txtTelefone.Text;
+            if (txtTelefone2.Text != "Telefone*")
+            {
+                customer.Telefone_Aux = txtTelefone2.Text;
+            }
+            else
+            {
+                customer.Telefone_Aux = "Não informado";
+            }
+            customer.Endereco.CEP = txtCep.Text;
+            customer.Endereco.Pais = txtPais.Text;
+            customer.Endereco.Rua = txtRua.Text;
+            customer.Endereco.UF = txtUf.Text;
+            customer.Endereco.Cidade = txtCidade.Text;
+            customer.Endereco.Bairro = txtBairro.Text;
+            customer.Endereco.Numero = txtNumero.Text;
 
-            Address address = new Address();
-            address.Pais = "Brasil";
-            address.Rua = "rua um";
-            address.CEP = "88220000";
-            address.Bairro = "bairro teste";
-            address.Cidade = "CAMBORIU";
-            address.UF = "PR";
-            address.Numero = "126";
-            customer.Nome = "TESTE";
-            customer.CPF = "12600204954";
-            customer.RG = "567467";
-            customer.Telefone = "479999995";
-            //customer.Email = "";
-            customer.Endereco = address;
-            customerBLL.InsertAddressCustomerTransaction(customer);
+            response = customerBLL.InsertAddressCustomerTransaction(customer);
 
-            //Response response = new AddressUserTransaction().InsertAddressUserTransaction(user);
-            //MessageBox.Show(response.Message);
-            //Response response = userBLL.Insert(user);
-            //MessageBox.Show(response.Message);
+            if (response.Success)
+            {
+                Form form = new FormCadastradoComSucesso();
+                form.Show();
+            }
+            else
+            {
+                Form form = new FormNaoCadastrado(response.Message);
+                form.Show();
+            }
+
         }
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)
         {
-            string path = Path.Combine(Environment.CurrentDirectory, @"Fonts\", "GatsbyFLF.ttf");
             PrivateFontCollection pfc = new PrivateFontCollection();
-            pfc.AddFontFile(path);
-            FontFamily fontFamily = new FontFamily(pfc.Families.First().Name, pfc);
+            pfc.AddFontFile(Path.Combine(Environment.CurrentDirectory, @"Fonts\", "GatsbyFLF-Bold.ttf"));
+
+            txtNome.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtCpf.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtRg.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtTelefone.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtTelefone2.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtCep.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtPais.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtUf.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtCidade.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtBairro.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtRua.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtNumero.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtEmail.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnCadastrar.Font = new Font(pfc.Families[0], 24, FontStyle.Bold);
+            labelCadastrarCliente.Font = new Font(pfc.Families[0], 36, FontStyle.Bold);
+            labelDadosPessoais.Font = new Font(pfc.Families[0], 24, FontStyle.Bold);
+            labelEndereco.Font = new Font(pfc.Families[0], 24, FontStyle.Bold);
         }
 
-        private void panelCadastroCliente_Paint(object sender, PaintEventArgs e)
+        private void panelDadosPessoais_MouseEnter(object sender, EventArgs e)
         {
-
+            if (txtNome.Text != "Nome" && txtCpf.Text != "CPF" && txtRg.Text != "RG" && txtEmail.Text != "Email" && txtTelefone.Text != "Telefone" && txtCep.Text != "CEP" && txtPais.Text != "País" && txtRua.Text != "Rua" && txtBairro.Text != "Bairro" && txtCidade.Text != "Cidade" && txtUf.Text != "UF" && txtNumero.Text != "Número")
+            {
+                btnCadastrar.BackColor = Color.Black;
+                btnCadastrar.ForeColor = Color.FromArgb(230, 180, 83);
+                btnCadastrar.Enabled = true;
+                btnCadastrar.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                btnCadastrar.BackColor = Color.FromArgb(20, 20, 20);
+                btnCadastrar.ForeColor = Color.Silver;
+                btnCadastrar.Enabled = false;
+                btnCadastrar.Cursor = Cursors.Default;
+            }
         }
+
+        private void txtNumero_Enter(object sender, EventArgs e)
+        {
+            if (txtNumero.Text == "Número")
+            {
+                txtNumero.Text = "";
+                txtNumero.ForeColor = Color.FromArgb(230, 180, 83);
+                linhaNumero.BackColor = Color.Silver;
+            }
+        }
+
+        private void txtNumero_Leave(object sender, EventArgs e)
+        {
+            if (txtNumero.Text == "")
+            {
+                txtNumero.Text = "Número";
+                txtNumero.ForeColor = Color.Silver;
+                linhaNumero.BackColor = Color.FromArgb(230, 180, 83);
+            }
+        }
+
     }
 }

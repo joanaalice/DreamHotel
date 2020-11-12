@@ -19,12 +19,14 @@ namespace DataAccessLayer
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO Rooms (BLOCO, NOME, VALOR_DIARIA, RESERVADO, TIPO_QUARTO) VALUES (@BLOCO, @NOME, @VALOR_DIARIA, @RESERVADO, @TIPO_QUARTO)";
+            command.CommandText = "INSERT INTO Rooms (BLOCO, NOME, VALOR_DIARIA, RESERVADO, TIPO, NUMERO) VALUES (@BLOCO, @NOME, @VALOR_DIARIA, @RESERVADO, @TIPO, @NUMERO)";
             command.Parameters.AddWithValue("@BLOCO", quarto.Bloco);
             command.Parameters.AddWithValue("@NOME", quarto.Nome);
             command.Parameters.AddWithValue("@VALOR_DIARIA", quarto.Valor_Diaria);
             command.Parameters.AddWithValue("@RESERVADO", quarto.Reservado);
-            command.Parameters.AddWithValue("@TIPO_QUARTO", quarto.Tipo_Quarto);
+            command.Parameters.AddWithValue("@TIPO", quarto.Tipo);
+            command.Parameters.AddWithValue("@NUMERO", quarto.Numero);
+
 
             command.Connection = connection;
 
@@ -119,12 +121,12 @@ namespace DataAccessLayer
                     Room quarto = new Room();
                     quarto.ID = (int)reader["ID"];
                     quarto.Bloco = (string)reader["BLOCO"];
-                    quarto.Nome = (string)reader["NOME"];
-                    quarto.Valor_Diaria = (decimal)reader["VALOR_DIARIA"];
+                    quarto.Nome = (NomeEnum)reader["NOME"];
+                    quarto.Valor_Diaria = Convert.ToDouble(reader["VALOR_DIARIA"]);
                     quarto.Reservado = (bool)reader["RESERVADO"];
                     quarto.Ativo = (bool)reader["ATIVO"];
                     quarto.Numero = (string)reader["NUMERO"];
-                    quarto.Tipo_Quarto = (TipoEnum)reader["TIPO_QUARTO"];
+                    quarto.Tipo = (TipoEnum)reader["TIPO"];
                     quartos.Add(quarto);
                 }
                 response.Success = true;
@@ -146,6 +148,171 @@ namespace DataAccessLayer
             }
 
         }
+
+        public QueryResponse<Room> GetReservatedRoomsByDate(DateTime dataEntrada, DateTime dataSaida)
+        {
+            QueryResponse<Room> response = new QueryResponse<Room>();
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionHelper.GetConnectionString();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT ro.* FROM Rooms ro " +
+                                  "INNER JOIN Reservations re " +
+                                  "ON ro.ID = re.QUARTOID " +
+                                  "WHERE re.DATA_ENTRADA " +
+                                  "BETWEEN @DATA_ENTRADA " +
+                                  "AND @DATA_SAIDA";
+            command.Parameters.AddWithValue("@DATA_ENTRADA", dataEntrada);
+            command.Parameters.AddWithValue("@DATA_SAIDA", dataSaida);
+            command.Connection = connection;
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<Room> rooms = new List<Room>();
+
+
+                while (reader.Read())
+                {
+                    Room room = new Room();
+                    room.ID = (int)reader["ID"];
+                    room.Bloco = (string)reader["BLOCO"];
+                    room.Nome = (NomeEnum)reader["NOME"];
+                    room.Numero = (string)reader["NUMERO"];
+                    room.Valor_Diaria= Convert.ToDouble(reader["VALOR_DIARIA"]);
+                    room.Reservado = (bool)reader["RESERVADO"];
+                    room.Tipo = (TipoEnum)reader["TIPO"];
+                    rooms.Add(room);
+                }
+                response.Success = true;
+                response.Message = "Dados selecionados com sucesso.";
+                response.Data = rooms;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Erro no banco de dados contate o adm.";
+                response.ExceptionError = ex.Message;
+                response.StackTrace = ex.StackTrace;
+                return response;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        public SingleResponse<Room> GetRoomByNumber(string nome)
+        {
+            SingleResponse<Room> response = new SingleResponse<Room>();
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionHelper.GetConnectionString();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT * FROM Rooms WHERE NOME = @NOME AND ATIVO = 1";
+            command.Parameters.AddWithValue("@NOME", nome);
+            command.Connection = connection;
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                Room room = new Room();
+
+                if (reader.Read())
+                {
+                    
+                    room.ID = (int)reader["ID"];
+                    room.Bloco = (string)reader["BLOCO"];
+                    room.Nome = (NomeEnum)reader["NOME"];
+                    room.Numero = (string)reader["NUMERO"];
+                    room.Valor_Diaria = Convert.ToDouble(reader["VALOR_DIARIA"]);
+                    room.Reservado = (bool)reader["RESERVADO"];
+                    room.Tipo = (TipoEnum)reader["TIPO"];
+                }
+
+                response.Success = true;
+                response.Message = "Dado selecionado com sucesso.";
+                response.Data = room;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Erro no banco de dados contate o adm.";
+                response.ExceptionError = ex.Message;
+                response.StackTrace = ex.StackTrace;
+                return response;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        public QueryResponse<Room> GetRoomsByBloc(string bloco)
+        {
+            QueryResponse<Room> response = new QueryResponse<Room>();
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionHelper.GetConnectionString();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT * FROM Rooms WHERE BLOCO = @BLOCO AND ATIVO = 1";
+            command.Parameters.AddWithValue("@BLOCO", bloco);
+            command.Connection = connection;
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                Room room = new Room();
+                List<Room> rooms = new List<Room>();
+
+                while (reader.Read())
+                {
+
+                    room.ID = (int)reader["ID"];
+                    room.Bloco = (string)reader["BLOCO"];
+                    room.Nome = (NomeEnum)reader["NOME"];
+                    room.Numero = (string)reader["NUMERO"];
+                    room.Valor_Diaria = Convert.ToDouble(reader["VALOR_DIARIA"]);
+                    room.Reservado = (bool)reader["RESERVADO"];
+                    room.Tipo = (TipoEnum)reader["TIPO"];
+                    rooms.Add(room);
+                }
+
+                response.Success = true;
+                response.Message = "Dado selecionado com sucesso.";
+                response.Data = rooms;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Erro no banco de dados contate o adm.";
+                response.ExceptionError = ex.Message;
+                response.StackTrace = ex.StackTrace;
+                return response;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+
         // public SingleResponse<Room> GetRoomByID(int id)
         //{
         //    SingleResponse<Room> response = new SingleResponse<Room>();

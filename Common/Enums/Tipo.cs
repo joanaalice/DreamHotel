@@ -8,9 +8,9 @@ namespace Common.Enums
 {
     public enum TipoEnum
     {
-        solteiro,
-        duplo,
-        casal,
-        dormitorio
+        solteiro = 1,
+        duplo = 2,
+        casal = 3,
+        dormitorio = 4
     }
 }

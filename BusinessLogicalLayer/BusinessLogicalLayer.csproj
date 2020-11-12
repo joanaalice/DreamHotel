@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AddressUserTransaction.cs" />
     <Compile Include="BaseValidator.cs" />
+    <Compile Include="CategoryBLL.cs" />
     <Compile Include="Checkers\CheckAnyProperty.cs" />
     <Compile Include="Checkers\CheckAttributeLength.cs" />
     <Compile Include="Checkers\CheckCnpjRule.cs" />

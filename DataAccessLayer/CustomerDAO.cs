@@ -24,7 +24,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@RG", customer.RG);
             command.Parameters.AddWithValue("@EMAIL", customer.Email);
             command.Parameters.AddWithValue("@TELEFONE1", customer.Telefone);
-            command.Parameters.AddWithValue("@TELEFONE2", customer.Telefone_aux);
+            command.Parameters.AddWithValue("@TELEFONE2", customer.Telefone_Aux);
             command.Parameters.AddWithValue("@ENDERECOID", customer.EnderecoId);
 
             command.Connection = connection;
@@ -78,7 +78,7 @@ namespace DataAccessLayer
                         response.Data.RG = (string)reader["RG"];
                         response.Data.Email = (string)reader["EMAIL"];
                         response.Data.Telefone = (string)reader["TELEFONE1"];
-                        response.Data.Telefone_aux = (string)reader["TELEFONE2"];
+                        response.Data.Telefone_Aux = (string)reader["TELEFONE2"];
                         response.Data.EnderecoId = (int)reader["ENDERECOID"];
                         response.Data.Ativo = (bool)reader["ATIVO"];
                         response.Data.Endereco.ID = (int)reader["IDADDRESS"];
@@ -146,7 +146,7 @@ namespace DataAccessLayer
                     customer.CPF = (string)reader["CPF"];
                     customer.RG = (string)reader["RG"];
                     customer.Telefone = (string)reader["TELEFONE1"];
-                    customer.Telefone_aux = (string)reader["TELEFONE2"];
+                    customer.Telefone_Aux = (string)reader["TELEFONE2"];
                     customer.Email = (string)reader["EMAIL"];
                     customer.EnderecoId = (int)reader["ENDERECOID"];
                     customer.Data_Cadastro = (DateTime)reader["DATA_CADASTRO"];

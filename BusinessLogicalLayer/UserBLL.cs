@@ -1,7 +1,9 @@
 ﻿using BusinessLogicalLayer.Checkers;
 using Common;
+using Common.Auxiliar;
 using DataAccessLayer;
 using Entities;
+using System.Collections.Generic;
 using System.Transactions;
 
 namespace BusinessLogicalLayer
@@ -11,10 +13,11 @@ namespace BusinessLogicalLayer
         private UserDAO userDAO = new UserDAO();
         public Response Insert(User item)
         {
+            item.CPF = CPFMask.CPFUnmasked(item.CPF);
             Response response = Validate(item);
             if (response.Success)
             {
-                response = userDAO.IsCpfUnique(item.Cpf);
+                response = userDAO.IsCpfUnique(item.CPF);
                 if (response.Success)
                 {
                     return userDAO.Insert(item);
@@ -22,12 +25,33 @@ namespace BusinessLogicalLayer
             }
             return response;
         }
-
-        public SingleResponse<User> GetUserByCPF(string cpf)
+        public Response Update(User user)
         {
-            return userDAO.GetUserByCPF(cpf);
+            return userDAO.Update(user);
         }
-
+        public Response Delete(User user)
+        {
+            return userDAO.Delete(user.ID);
+        }
+        public QueryResponse<User> GetAll()
+        {
+            QueryResponse<User> responseUser = userDAO.GetAll();
+            List<User> temp = responseUser.Data;
+            foreach (User item in temp)
+            {
+                item.CPF = CPFMask.CPFMasked(item.CPF);
+            }
+            return responseUser;
+        }
+        //public Response GetUserLogin(string email, string senha)
+        //{
+        //    SingleResponse<User> usuarioResponse = userDAO.GetUserLoginCredencials(email, senha);
+        //    if (usuarioResponse.Success)
+        //    {
+        //        IsUserLog.CurrentUser = new UserLoged() { ID = usuarioResponse.Data.ID, Email = usuarioResponse.Data.Email, Nome = usuarioResponse.Data.Nome };
+        //    }
+        //    return usuarioResponse;
+        //}
         public Response InsertAddressUserTransaction(User usuario)
         {
             Response responseUser = null;
@@ -50,10 +74,29 @@ namespace BusinessLogicalLayer
             return responseUser;
         }
 
+        public Response GetUserLogin(string email, string senha)
+        {
+            SingleResponse<User> usuarioResponse = userDAO.GetUserLoginCredencials(email, senha);
+            if (usuarioResponse.Success)
+            {
+                IsUserLog.CurrentUser = new UserLoged() { ID = usuarioResponse.Data.ID, Email = usuarioResponse.Data.Email, Nome = usuarioResponse.Data.Nome };
+            }
+            return usuarioResponse;
+        }
+        public SingleResponse<User> GetUserByCPF(string cpf)
+        {
+            return userDAO.GetUserByCPF(cpf);
+        }
+
+        public SingleResponse<User> GetUserById(int id)
+        {
+            return userDAO.GetUserById(id);
+        }
         public override Response Validate(User item)
         {
             if (CheckAnyProperty.IsAnyNullOrEmpty(item))
             {
+                
                 AddError("Todos os campos devem ser informados");
                 return base.Validate(item);
             }
@@ -61,7 +104,7 @@ namespace BusinessLogicalLayer
             {
                 AddError(err);
             }
-            AddError(item.Cpf.IsValidCPF());
+            AddError(item.CPF.IsValidCPF());
             if (item.Email != "")
             {
                 AddError(item.Email.IsValidEmail());

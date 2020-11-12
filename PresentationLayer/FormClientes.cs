@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +29,6 @@ namespace PresentationLayer
             if (response.Success)
             {
                 dgvClientes.DataSource = response.Data;
-                
             }
             else
             {
@@ -46,15 +47,17 @@ namespace PresentationLayer
                 SingleResponse<Customer> response = customerBLL.GetCustomerByCPF(txtCpf.Text);
                 if (response.Success)
                 {
-                    dgvClientes.DataSource = response.Data;
+                    dgvClientes.DataSource = new List<Customer>() { response.Data };
                 }
                 else
                 {
                     MessageBox.Show(response.Message);
                 }
             }
-            Filtrar("Ativo", btnAtivo);
-            FiltrarEndereco();
+            foreach (DataGridViewColumn column in dgvClientes.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
@@ -65,6 +68,10 @@ namespace PresentationLayer
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
+            if (dgvClientes.SelectedRows.Count > 0)
+            {
+                string idt = dgvClientes.SelectedRows[0].Cells[1].Value.ToString();
+            }
         }
 
         #region Text Boxs
@@ -126,49 +133,6 @@ namespace PresentationLayer
                 }
             }
         }
-        private void FiltrarEndereco()
-        {
-            if (btnEnderecoID.BackColor == Color.Black)
-            {
-                btnEnderecoID.BackColor = Color.Gray;
-                btnEnderecoID.ForeColor = Color.Black;
-
-                foreach (DataGridViewColumn dgvcolumn in dgvClientes.Columns)
-                {
-                    foreach (string nomeColuna in enderecoNomesColunas)
-                    {
-                        if (dgvcolumn.Name == nomeColuna)
-                        {
-                            dgvcolumn.Visible = false;
-
-                        }
-                    }
-                }
-            }
-            else
-            {
-                btnEnderecoID.BackColor = Color.Black;
-                btnEnderecoID.ForeColor = Color.FromArgb(230, 180, 83);
-
-                foreach (DataGridViewColumn dgvcolumn in dgvClientes.Columns)
-                {
-                    foreach (string nomeColuna in enderecoNomesColunas)
-                    {
-                        if (dgvcolumn.Name == nomeColuna)
-                        {
-                            dgvcolumn.Visible = true;
-
-                        }
-                    }
-                }
-            }
-
-        }
-
-        private void btnID_Click(object sender, EventArgs e)
-        {
-            Filtrar("ID", btnID);
-        }
 
         private void btnNome_Click(object sender, EventArgs e)
         {
@@ -200,21 +164,6 @@ namespace PresentationLayer
             Filtrar("Email", btnTelefone);
         }
 
-        private void btnEnderecoID_Click(object sender, EventArgs e)
-        {
-            FiltrarEndereco();
-        }
-
-        private void btnData_Click(object sender, EventArgs e)
-        {
-            Filtrar("Data_Cadastro", btnData);
-        }
-
-        private void btnAtivo_Click(object sender, EventArgs e)
-        {
-            Filtrar("Ativo", btnAtivo);
-        }
-
         #endregion
 
         private void FormClientes_Load(object sender, EventArgs e)
@@ -229,18 +178,38 @@ namespace PresentationLayer
             enderecoNomesColunas.Add("Pais");
             enderecoNomesColunas.Add("Numero");
 
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile(Path.Combine(Environment.CurrentDirectory, @"Fonts\", "GatsbyFLF-Bold.ttf"));
+
+            labelClientes.Font = new Font(pfc.Families[0], 36, FontStyle.Bold);
+            txtCpf.Font = new Font(pfc.Families[0], 24, FontStyle.Bold);
+            btnBuscar.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnNome.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnCPF.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnRG.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnTelefone.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnTelefone2.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnEmail.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnDeletar.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnFiltrar.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            btnEditar.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+
         }
 
         private void dgvClientes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+        }
 
-            if (dgvClientes.CurrentCell.Value.ToString() == "Entities.")
-            {
-                //if (dgvClientes.CurrentCell.)
-                //{
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+       
+            string id = dgvClientes[e.ColumnIndex, e.RowIndex].Value.ToString();
+            MessageBox.Show(id);
+        }
 
-                //}
-            }
+        private void dgvClientes_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

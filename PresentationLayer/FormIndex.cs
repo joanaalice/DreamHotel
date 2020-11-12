@@ -89,7 +89,7 @@ namespace PresentationLayer
         private void btnCadastrarQuarto_Click(object sender, EventArgs e)
         {
             MinimizeMenu();
-            //openFormMenu(new Form());
+            openFormMenu(new FormCadastroQuarto());
             hideSubMenu();
         }
 
@@ -135,7 +135,7 @@ namespace PresentationLayer
         private void btnReservar_Click(object sender, EventArgs e)
         {
             MinimizeMenu();
-            //openFormMenu(new Form());
+            openFormMenu(new FormCadastroReserva());
             hideSubMenu();
         }
 
@@ -204,6 +204,28 @@ namespace PresentationLayer
 
         #endregion
 
+        #region Fornecedores Menu
+        private void btnFornecedores_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(panelFornecedores);
+        }
+
+        private void btnCadastrarFornecedor_Click(object sender, EventArgs e)
+        {
+            MinimizeMenu();
+            openFormMenu(new FormCadastroFornecedor());
+            hideSubMenu();
+        }
+
+        private void btnVerTodosFornecedores_Click(object sender, EventArgs e)
+        {
+            MinimizeMenu();
+            //openFormMenu(new FormFornecedores());
+            hideSubMenu();
+        }
+
+        #endregion
+
         #region Funcionarios Menu
 
         private void btnFuncionario_Click(object sender, EventArgs e)
@@ -214,14 +236,14 @@ namespace PresentationLayer
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
         {
             MinimizeMenu();
-            //openFormMenu(new Form());
+            openFormMenu(new FormCadastroUsuario());
             hideSubMenu();
         }
 
         private void btnVerTodosFuncionarios_Click(object sender, EventArgs e)
         {
             MinimizeMenu();
-            //openFormMenu(new Form());
+            openFormMenu(new FormUsuarios());
             hideSubMenu();
         }
 
@@ -364,10 +386,19 @@ namespace PresentationLayer
             showSubMenu(panelUsuarios);
         }
 
+        private void btnFornecedoresMinimizado_Click(object sender, EventArgs e)
+        {
+            MaximazeMenu();
+            showSubMenu(panelFornecedores);
+        }
+
         private void btnSairMinimizado_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
+
 
         #endregion
 

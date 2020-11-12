@@ -33,7 +33,6 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.PictureBox();
-            this.linkCadastrar = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.labelLogin = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -98,22 +97,6 @@
             this.btnFechar.TabStop = false;
             this.btnFechar.Click += new System.EventHandler(this.btnfechar_Click);
             // 
-            // linkCadastrar
-            // 
-            this.linkCadastrar.ActiveLinkColor = System.Drawing.Color.White;
-            this.linkCadastrar.AutoSize = true;
-            this.linkCadastrar.Font = new System.Drawing.Font("GatsbyFLF", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkCadastrar.ForeColor = System.Drawing.Color.Black;
-            this.linkCadastrar.LinkColor = System.Drawing.Color.White;
-            this.linkCadastrar.Location = new System.Drawing.Point(480, 292);
-            this.linkCadastrar.Name = "linkCadastrar";
-            this.linkCadastrar.Size = new System.Drawing.Size(65, 20);
-            this.linkCadastrar.TabIndex = 9;
-            this.linkCadastrar.TabStop = true;
-            this.linkCadastrar.Text = "Cadastrar?";
-            this.linkCadastrar.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.linkCadastrar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCadastrar_LinkClicked);
-            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -135,11 +118,11 @@
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("GatsbyFLF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.Font = new System.Drawing.Font("GatsbyFLF", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.Black;
-            this.labelLogin.Location = new System.Drawing.Point(477, 28);
+            this.labelLogin.Location = new System.Drawing.Point(446, 28);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(89, 40);
+            this.labelLogin.Size = new System.Drawing.Size(117, 52);
             this.labelLogin.TabIndex = 13;
             this.labelLogin.Text = "LOGIN";
             // 
@@ -180,7 +163,7 @@
             this.panelUsuario.Controls.Add(this.txtUsuario);
             this.panelUsuario.Location = new System.Drawing.Point(306, 100);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(406, 31);
+            this.panelUsuario.Size = new System.Drawing.Size(406, 32);
             this.panelUsuario.TabIndex = 53;
             // 
             // linhaUsuario
@@ -188,7 +171,7 @@
             this.linhaUsuario.BackColor = System.Drawing.Color.Black;
             this.linhaUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.linhaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linhaUsuario.Location = new System.Drawing.Point(0, 30);
+            this.linhaUsuario.Location = new System.Drawing.Point(0, 31);
             this.linhaUsuario.Name = "linhaUsuario";
             this.linhaUsuario.Size = new System.Drawing.Size(406, 1);
             this.linhaUsuario.TabIndex = 24;
@@ -200,7 +183,7 @@
             this.panelSenha.Controls.Add(this.txtSenha);
             this.panelSenha.Location = new System.Drawing.Point(306, 153);
             this.panelSenha.Name = "panelSenha";
-            this.panelSenha.Size = new System.Drawing.Size(406, 31);
+            this.panelSenha.Size = new System.Drawing.Size(406, 32);
             this.panelSenha.TabIndex = 54;
             // 
             // linhaSenha
@@ -208,7 +191,7 @@
             this.linhaSenha.BackColor = System.Drawing.Color.Black;
             this.linhaSenha.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.linhaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linhaSenha.Location = new System.Drawing.Point(0, 30);
+            this.linhaSenha.Location = new System.Drawing.Point(0, 31);
             this.linhaSenha.Name = "linhaSenha";
             this.linhaSenha.Size = new System.Drawing.Size(406, 1);
             this.linhaSenha.TabIndex = 24;
@@ -224,13 +207,13 @@
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnFechar);
-            this.Controls.Add(this.linkCadastrar);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.panelLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.Text = "v";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             this.MouseEnter += new System.EventHandler(this.FormLogin_MouseEnter);
             this.panelLogo.ResumeLayout(false);
@@ -252,7 +235,6 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnFechar;
-        private System.Windows.Forms.LinkLabel linkCadastrar;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.TextBox txtUsuario;

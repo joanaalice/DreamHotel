@@ -28,63 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panelCalendario = new System.Windows.Forms.Panel();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.dgvReservas = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.panelFiltrar = new System.Windows.Forms.Panel();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelBuscar = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panelQuarto = new System.Windows.Forms.Panel();
+            this.linhaQuarto = new System.Windows.Forms.Label();
+            this.txtQuarto = new System.Windows.Forms.TextBox();
             this.panelCpf = new System.Windows.Forms.Panel();
             this.linhaCpf = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.panelFundoCadstroCliente = new System.Windows.Forms.Panel();
-            this.CadastroDeCliente = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.labelReservas = new System.Windows.Forms.Label();
+            this.panelCalendario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelFiltrar.SuspendLayout();
+            this.panelBuscar.SuspendLayout();
+            this.panelQuarto.SuspendLayout();
             this.panelCpf.SuspendLayout();
             this.panelFundoCadstroCliente.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelCalendario
             // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.monthCalendar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 458);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(233, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(126, 100);
-            this.panel2.TabIndex = 2;
+            this.panelCalendario.Controls.Add(this.monthCalendar);
+            this.panelCalendario.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelCalendario.Location = new System.Drawing.Point(0, 0);
+            this.panelCalendario.Margin = new System.Windows.Forms.Padding(4);
+            this.panelCalendario.MinimumSize = new System.Drawing.Size(270, 587);
+            this.panelCalendario.Name = "panelCalendario";
+            this.panelCalendario.Size = new System.Drawing.Size(270, 587);
+            this.panelCalendario.TabIndex = 1;
             // 
             // monthCalendar
             // 
             this.monthCalendar.BackColor = System.Drawing.Color.Black;
             this.monthCalendar.CalendarDimensions = new System.Drawing.Size(1, 3);
-            this.monthCalendar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.monthCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.monthCalendar.ForeColor = System.Drawing.Color.Silver;
             this.monthCalendar.Location = new System.Drawing.Point(0, 0);
+            this.monthCalendar.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendar.MaximumSize = new System.Drawing.Size(269, 777);
+            this.monthCalendar.MinimumSize = new System.Drawing.Size(269, 587);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 2;
             this.monthCalendar.TitleBackColor = System.Drawing.Color.Black;
@@ -92,100 +83,50 @@
             this.monthCalendar.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
             // 
-            // dgvClientes
-            // 
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvClientes.EnableHeadersVisualStyles = false;
-            this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.dgvClientes.Location = new System.Drawing.Point(227, 0);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvClientes.RowHeadersVisible = false;
-            this.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(573, 458);
-            this.dgvClientes.TabIndex = 76;
-            // 
             // dgvReservas
             // 
+            this.dgvReservas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvReservas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.dgvReservas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReservas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReservas.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvReservas.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReservas.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvReservas.EnableHeadersVisualStyles = false;
             this.dgvReservas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.dgvReservas.Location = new System.Drawing.Point(227, 141);
+            this.dgvReservas.Location = new System.Drawing.Point(303, 174);
+            this.dgvReservas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvReservas.Name = "dgvReservas";
             this.dgvReservas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvReservas.RowHeadersVisible = false;
             this.dgvReservas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReservas.Size = new System.Drawing.Size(573, 249);
+            this.dgvReservas.Size = new System.Drawing.Size(764, 329);
             this.dgvReservas.TabIndex = 77;
             // 
-            // panel3
+            // panelFiltrar
             // 
-            this.panel3.Controls.Add(this.btnFiltrar);
-            this.panel3.Controls.Add(this.btnDeletar);
-            this.panel3.Controls.Add(this.btnEditar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(227, 390);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(573, 68);
-            this.panel3.TabIndex = 78;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnFiltrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.btnFiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.btnFiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("GatsbyFLF", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.btnFiltrar.Location = new System.Drawing.Point(333, 15);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(81, 32);
-            this.btnFiltrar.TabIndex = 82;
-            this.btnFiltrar.Text = "FILTRAR";
-            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.panelFiltrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelFiltrar.Controls.Add(this.btnDeletar);
+            this.panelFiltrar.Controls.Add(this.btnEditar);
+            this.panelFiltrar.Location = new System.Drawing.Point(303, 503);
+            this.panelFiltrar.Margin = new System.Windows.Forms.Padding(4);
+            this.panelFiltrar.Name = "panelFiltrar";
+            this.panelFiltrar.Size = new System.Drawing.Size(764, 84);
+            this.panelFiltrar.TabIndex = 78;
             // 
             // btnDeletar
             // 
@@ -196,11 +137,12 @@
             this.btnDeletar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletar.Font = new System.Drawing.Font("GatsbyFLF", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.btnDeletar.Location = new System.Drawing.Point(246, 15);
+            this.btnDeletar.Location = new System.Drawing.Point(391, 18);
+            this.btnDeletar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(81, 32);
+            this.btnDeletar.Size = new System.Drawing.Size(121, 39);
             this.btnDeletar.TabIndex = 81;
             this.btnDeletar.Text = "DELETAR";
             this.btnDeletar.UseVisualStyleBackColor = false;
@@ -214,26 +156,28 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("GatsbyFLF", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.btnEditar.Location = new System.Drawing.Point(159, 15);
+            this.btnEditar.Location = new System.Drawing.Point(261, 18);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(81, 32);
+            this.btnEditar.Size = new System.Drawing.Size(121, 39);
             this.btnEditar.TabIndex = 80;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
-            // panel4
+            // panelBuscar
             // 
-            this.panel4.Controls.Add(this.btnBuscar);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.panelCpf);
-            this.panel4.Controls.Add(this.panelFundoCadstroCliente);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(227, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(573, 141);
-            this.panel4.TabIndex = 79;
+            this.panelBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelBuscar.Controls.Add(this.btnBuscar);
+            this.panelBuscar.Controls.Add(this.panelQuarto);
+            this.panelBuscar.Controls.Add(this.panelCpf);
+            this.panelBuscar.Controls.Add(this.panelFundoCadstroCliente);
+            this.panelBuscar.Location = new System.Drawing.Point(303, 0);
+            this.panelBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBuscar.Name = "panelBuscar";
+            this.panelBuscar.Size = new System.Drawing.Size(764, 174);
+            this.panelBuscar.TabIndex = 79;
             // 
             // btnBuscar
             // 
@@ -244,56 +188,64 @@
             this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("GatsbyFLF", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.btnBuscar.Location = new System.Drawing.Point(246, 89);
+            this.btnBuscar.Location = new System.Drawing.Point(321, 110);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(76, 32);
+            this.btnBuscar.Size = new System.Drawing.Size(115, 39);
             this.btnBuscar.TabIndex = 69;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // panel5
+            // panelQuarto
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Location = new System.Drawing.Point(354, 89);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(197, 32);
-            this.panel5.TabIndex = 68;
+            this.panelQuarto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelQuarto.Controls.Add(this.linhaQuarto);
+            this.panelQuarto.Controls.Add(this.txtQuarto);
+            this.panelQuarto.Location = new System.Drawing.Point(472, 110);
+            this.panelQuarto.Margin = new System.Windows.Forms.Padding(4);
+            this.panelQuarto.Name = "panelQuarto";
+            this.panelQuarto.Size = new System.Drawing.Size(263, 39);
+            this.panelQuarto.TabIndex = 68;
             // 
-            // label1
+            // linhaQuarto
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 1);
-            this.label1.TabIndex = 24;
+            this.linhaQuarto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.linhaQuarto.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.linhaQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linhaQuarto.Location = new System.Drawing.Point(0, 38);
+            this.linhaQuarto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linhaQuarto.Name = "linhaQuarto";
+            this.linhaQuarto.Size = new System.Drawing.Size(263, 1);
+            this.linhaQuarto.TabIndex = 24;
             // 
-            // textBox1
+            // txtQuarto
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Font = new System.Drawing.Font("GatsbyFLF", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 29);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Text = "Por número do quarto...";
+            this.txtQuarto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtQuarto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQuarto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtQuarto.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuarto.ForeColor = System.Drawing.Color.Silver;
+            this.txtQuarto.Location = new System.Drawing.Point(0, 0);
+            this.txtQuarto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtQuarto.Name = "txtQuarto";
+            this.txtQuarto.Size = new System.Drawing.Size(263, 37);
+            this.txtQuarto.TabIndex = 23;
+            this.txtQuarto.Text = "Por número do quarto...";
+            this.txtQuarto.Enter += new System.EventHandler(this.txtQuarto_Enter);
+            this.txtQuarto.Leave += new System.EventHandler(this.txtQuarto_Leave);
             // 
             // panelCpf
             // 
             this.panelCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelCpf.Controls.Add(this.linhaCpf);
             this.panelCpf.Controls.Add(this.txtCpf);
-            this.panelCpf.Location = new System.Drawing.Point(25, 89);
+            this.panelCpf.Location = new System.Drawing.Point(33, 110);
+            this.panelCpf.Margin = new System.Windows.Forms.Padding(4);
             this.panelCpf.Name = "panelCpf";
-            this.panelCpf.Size = new System.Drawing.Size(197, 32);
+            this.panelCpf.Size = new System.Drawing.Size(263, 39);
             this.panelCpf.TabIndex = 67;
             // 
             // linhaCpf
@@ -301,9 +253,10 @@
             this.linhaCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
             this.linhaCpf.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.linhaCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linhaCpf.Location = new System.Drawing.Point(0, 31);
+            this.linhaCpf.Location = new System.Drawing.Point(0, 38);
+            this.linhaCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linhaCpf.Name = "linhaCpf";
-            this.linhaCpf.Size = new System.Drawing.Size(197, 1);
+            this.linhaCpf.Size = new System.Drawing.Size(263, 1);
             this.linhaCpf.TabIndex = 24;
             // 
             // txtCpf
@@ -311,66 +264,61 @@
             this.txtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpf.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCpf.Font = new System.Drawing.Font("GatsbyFLF", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Font = new System.Drawing.Font("GatsbyFLF", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.ForeColor = System.Drawing.Color.Silver;
             this.txtCpf.Location = new System.Drawing.Point(0, 0);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(197, 29);
+            this.txtCpf.Size = new System.Drawing.Size(263, 37);
             this.txtCpf.TabIndex = 23;
             this.txtCpf.Text = "Por CPF do cliente...";
+            this.txtCpf.Enter += new System.EventHandler(this.txtCpf_Enter);
+            this.txtCpf.Leave += new System.EventHandler(this.txtCpf_Leave);
             // 
             // panelFundoCadstroCliente
             // 
-            this.panelFundoCadstroCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelFundoCadstroCliente.Controls.Add(this.CadastroDeCliente);
-            this.panelFundoCadstroCliente.Location = new System.Drawing.Point(118, 12);
+            this.panelFundoCadstroCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelFundoCadstroCliente.Controls.Add(this.labelReservas);
+            this.panelFundoCadstroCliente.Location = new System.Drawing.Point(288, 15);
+            this.panelFundoCadstroCliente.Margin = new System.Windows.Forms.Padding(4);
             this.panelFundoCadstroCliente.Name = "panelFundoCadstroCliente";
-            this.panelFundoCadstroCliente.Size = new System.Drawing.Size(335, 48);
+            this.panelFundoCadstroCliente.Size = new System.Drawing.Size(179, 59);
             this.panelFundoCadstroCliente.TabIndex = 23;
             // 
-            // CadastroDeCliente
+            // labelReservas
             // 
-            this.CadastroDeCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CadastroDeCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.CadastroDeCliente.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CadastroDeCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.CadastroDeCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.CadastroDeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CadastroDeCliente.Font = new System.Drawing.Font("GatsbyFLF", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CadastroDeCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
-            this.CadastroDeCliente.Location = new System.Drawing.Point(-18, -1);
-            this.CadastroDeCliente.Name = "CadastroDeCliente";
-            this.CadastroDeCliente.Size = new System.Drawing.Size(377, 51);
-            this.CadastroDeCliente.TabIndex = 23;
-            this.CadastroDeCliente.Text = "BUSCAR RESERVAS";
-            this.CadastroDeCliente.UseVisualStyleBackColor = false;
+            this.labelReservas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelReservas.Font = new System.Drawing.Font("GatsbyFLF", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(83)))));
+            this.labelReservas.Location = new System.Drawing.Point(0, 0);
+            this.labelReservas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelReservas.Name = "labelReservas";
+            this.labelReservas.Size = new System.Drawing.Size(179, 59);
+            this.labelReservas.TabIndex = 53;
+            this.labelReservas.Text = "Reservas";
             // 
             // FormReservas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(800, 458);
+            this.ClientSize = new System.Drawing.Size(1067, 587);
+            this.Controls.Add(this.panelCalendario);
             this.Controls.Add(this.dgvReservas);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dgvClientes);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelBuscar);
+            this.Controls.Add(this.panelFiltrar);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1085, 634);
             this.Name = "FormReservas";
             this.Text = "FormReservas";
             this.Load += new System.EventHandler(this.FormReservas_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.panelCalendario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelFiltrar.ResumeLayout(false);
+            this.panelBuscar.ResumeLayout(false);
+            this.panelQuarto.ResumeLayout(false);
+            this.panelQuarto.PerformLayout();
             this.panelCpf.ResumeLayout(false);
             this.panelCpf.PerformLayout();
             this.panelFundoCadstroCliente.ResumeLayout(false);
@@ -379,24 +327,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelCalendario;
         private System.Windows.Forms.MonthCalendar monthCalendar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.DataGridView dgvReservas;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelFiltrar;
+        private System.Windows.Forms.Panel panelBuscar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Panel panelFundoCadstroCliente;
-        private System.Windows.Forms.Button CadastroDeCliente;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panelQuarto;
+        private System.Windows.Forms.Label linhaQuarto;
+        private System.Windows.Forms.TextBox txtQuarto;
         private System.Windows.Forms.Panel panelCpf;
         private System.Windows.Forms.Label linhaCpf;
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label labelReservas;
     }
 }

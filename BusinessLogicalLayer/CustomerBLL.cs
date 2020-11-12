@@ -60,11 +60,6 @@ namespace BusinessLogicalLayer
         public QueryResponse<Customer> GetAll()
         {
             QueryResponse<Customer> responseCustomer = customerDAO.GetAll();
-            List<Customer> temp = responseCustomer.Data;
-            foreach (Customer item in temp)
-            {
-                item.CPF = item.CPF.Insert(3, ".").Insert(7, ".").Insert(12, "-");
-            }
             return responseCustomer;
         }
 

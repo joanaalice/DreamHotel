@@ -9,6 +9,11 @@ namespace Entities
 {
     public class Address
     {
+        public override string ToString()
+        {
+            return this.Cidade + " - " + this.UF;
+        }
+
         public int ID { get; set; }
         [Length(10)]
         [@MinLength(1)]

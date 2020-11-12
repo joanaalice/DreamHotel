@@ -10,3 +10,14 @@ C:\Users\User\Desktop\DreamHotelMaster-master\Common\obj\Debug\Common.csprojAsse
 C:\Users\User\Desktop\DreamHotelMaster-master\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\DreamHotelMaster-master\Common\obj\Debug\Common.dll
 C:\Users\User\Desktop\DreamHotelMaster-master\Common\obj\Debug\Common.pdb
+C:\Users\Joana.DESKTOP-1T5I4G0\source\repos\HotelRepository\DreamHotel\Common\bin\Debug\Common.dll
+C:\Users\Joana.DESKTOP-1T5I4G0\source\repos\HotelRepository\DreamHotel\Common\bin\Debug\Common.pdb
+C:\Users\Joana.DESKTOP-1T5I4G0\source\repos\HotelRepository\DreamHotel\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Joana.DESKTOP-1T5I4G0\source\repos\HotelRepository\DreamHotel\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Joana.DESKTOP-1T5I4G0\source\repos\HotelRepository\DreamHotel\Common\obj\Debug\Common.dll
+C:\Users\Joana.DESKTOP-1T5I4G0\source\repos\HotelRepository\DreamHotel\Common\obj\Debug\Common.pdb
+C:\Users\entra21\Desktop\DreamHotel\Common\bin\Debug\Common.dll
+C:\Users\entra21\Desktop\DreamHotel\Common\bin\Debug\Common.pdb
+C:\Users\entra21\Desktop\DreamHotel\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\entra21\Desktop\DreamHotel\Common\obj\Debug\Common.dll
+C:\Users\entra21\Desktop\DreamHotel\Common\obj\Debug\Common.pdb

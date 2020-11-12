@@ -11,19 +11,17 @@ namespace Entities
     public class Room
     {
         public int ID { get; set; }
-        [Length(70)]
+        public NomeEnum Nome { get; set; }
+        [Length(10)]
         [@MinLength(1)]
-        public string Nome { get; set; }
-        [Length(70)]
-        [@MinLength(3)]
         public string Bloco { get; set; }
         [Length(6)]
         [@MinLength(1)]
         public string Numero { get; set; }
-        public TipoEnum Tipo_Quarto { get; set; }
-        [Length(10)]
-        [@MinLength(3)]
-        public decimal Valor_Diaria { get; set; }
+        public TipoEnum Tipo { get; set; }
+        [Length(18)]
+        [@MinLength(1)]
+        public double Valor_Diaria { get; set; }
         public DateTime Data_Cadastro { get; set; }
         public bool Reservado { get; set; } = false;
         public bool Ativo { get; set; }

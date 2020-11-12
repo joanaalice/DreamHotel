@@ -8,6 +8,10 @@ namespace Common
 {
     public class QueryResponse<T> : Response
     {
+        public QueryResponse()
+        {
+            this.Data = new List<T>();
+        }
         public List<T> Data { get; set; }
     }
 }

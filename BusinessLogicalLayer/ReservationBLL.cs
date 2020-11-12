@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer
 {
-    class ReservationBLL : BaseValidator<Reservation>
+    public class ReservationBLL : BaseValidator<Reservation>
     {
         private ReservationDAO reservationDAO = new ReservationDAO();
         public Response Insert(Reservation item)
@@ -39,6 +39,8 @@ namespace BusinessLogicalLayer
             }
             return base.Validate(item);
         }
+
+        
     }
 }
 

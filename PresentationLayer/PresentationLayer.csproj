@@ -72,6 +72,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroFornecedor.Designer.cs">
+      <DependentUpon>FormCadastroFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroQuarto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroQuarto.Designer.cs">
+      <DependentUpon>FormCadastroQuarto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroUsuario.Designer.cs">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +108,12 @@
     <Compile Include="FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFornecedores.Designer.cs">
+      <DependentUpon>FormFornecedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormIndex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,17 +126,62 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuartos.Designer.cs">
+      <DependentUpon>FormQuartos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReservas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormReservas.Designer.cs">
       <DependentUpon>FormReservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuarios.Designer.cs">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVendaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVendaProduto.Designer.cs">
+      <DependentUpon>FormVendaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\FormCadastradoComSucesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\FormCadastradoComSucesso.Designer.cs">
+      <DependentUpon>FormCadastradoComSucesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\FormNaoCadastrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\FormNaoCadastrado.Designer.cs">
+      <DependentUpon>FormNaoCadastrado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\FormUsuarioNaoEncontrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\FormUsuarioNaoEncontrado.Designer.cs">
+      <DependentUpon>FormUsuarioNaoEncontrado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Fonts\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroFornecedor.resx">
+      <DependentUpon>FormCadastroFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroQuarto.resx">
+      <DependentUpon>FormCadastroQuarto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroUsuario.resx">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroReserva.resx">
       <DependentUpon>FormCadastroReserva.cs</DependentUpon>
@@ -123,6 +192,9 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFornecedores.resx">
+      <DependentUpon>FormFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormIndex.resx">
       <DependentUpon>FormIndex.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +203,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReservas.resx">
       <DependentUpon>FormReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\FormCadastradoComSucesso.resx">
+      <DependentUpon>FormCadastradoComSucesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\FormNaoCadastrado.resx">
+      <DependentUpon>FormNaoCadastrado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\FormUsuarioNaoEncontrado.resx">
+      <DependentUpon>FormUsuarioNaoEncontrado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,7 +228,6 @@
     <None Include="Fonts\GatsbyFLF-Bold.ttf" />
     <None Include="Fonts\GatsbyFLF-BoldItalic.ttf" />
     <None Include="Fonts\GatsbyFLF-Italic.ttf" />
-    <None Include="Fonts\GatsbyFLF.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

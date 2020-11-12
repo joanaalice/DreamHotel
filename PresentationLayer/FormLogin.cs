@@ -1,8 +1,13 @@
-﻿using System;
+﻿using BusinessLogicalLayer;
+using Common;
+using PresentationLayer.Messages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -64,8 +69,7 @@ namespace PresentationLayer
             {
                 txtSenha.Text = "";
                 txtSenha.ForeColor = Color.White;
-                txtSenha.Font = new Font(txtSenha.Font.Name, 10,
-                txtSenha.Font.Style);
+                txtSenha.Font = new Font(txtSenha.Font.Name, 10, txtSenha.Font.Style);
                 txtSenha.UseSystemPasswordChar = true;
                 linhaSenha.BackColor = Color.White;
             }
@@ -77,8 +81,7 @@ namespace PresentationLayer
             {
                 txtSenha.Text = "Senha";
                 txtSenha.ForeColor = Color.Black;
-                txtSenha.Font = new Font(txtSenha.Font.Name, 20,
-                txtSenha.Font.Style);
+                txtSenha.Font = new Font(txtSenha.Font.Name, 20, txtSenha.Font.Style);
                 txtSenha.UseSystemPasswordChar = false;
                 linhaSenha.BackColor = Color.Black;
             }
@@ -109,16 +112,39 @@ namespace PresentationLayer
             }
         }
 
-        private FormIndex formIndex = new FormIndex();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            formIndex.Show();
-            this.Hide();
+            UserBLL userBLL = new UserBLL();
+            userBLL.GetUserLogin(txtUsuario.Text, txtSenha.Text);
+            if (IsUserLog.IsUserLoged())
+            {
+                FormIndex formIndex = new FormIndex();
+                formIndex.Show();
+                this.Hide();
+            }
+            else
+            {
+                Form form = new FormNaoCadastrado("Usuário não encontrado.");
+                form.Show();
+            }
+           
         }
 
         private void linkCadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile(Path.Combine(Environment.CurrentDirectory, @"Fonts\", "GatsbyFLF-Bold.ttf"));
+
+            txtSenha.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            txtUsuario.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            labelLogin.Font = new Font(pfc.Families[0], 36, FontStyle.Bold);
+            btnLogin.Font = new Font(pfc.Families[0], 24, FontStyle.Bold);
+
 
         }
     }
