@@ -12,7 +12,7 @@ namespace Entities
         public int ID { get; set; }
         public DateTime Data_Cadastro { get; set; }
         [Length(60)]
-        [@MinLength(3)]
+        [@MinLength(2)]
         public string Nome { get; set; }
         public bool Ativo { get; set; }
     }
